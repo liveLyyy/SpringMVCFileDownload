@@ -15,9 +15,9 @@
     -->
     <mvc:annotation-driven/>
 
-    <!-- 静态资源-->
-    <mvc:resources mapping="/static/**" location="/static/"/>
-    <mvc:resources mapping="/files/**" location="static/files/"/>
+<!--    &lt;!&ndash; 静态资源&ndash;&gt;-->
+<!--    <mvc:resources mapping="/static/**" location="/static/"/>-->
+<!--    <mvc:resources mapping="/files/**" location="static/files/"/>-->
 
     <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix" value="/"/>
@@ -25,15 +25,10 @@
     </bean>
 
     <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
-        <property name="maxUploadSize" value="100"/>
+        <property name="maxUploadSize" value="10485760"/>
+        <property name="defaultEncoding" value="UTF-8   "/>
     </bean>
-    <bean id="simpleMappingExceptionResolver" class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
-        <property name="exceptionMappings">
-            <props>
-                <prop key="org.springframework.web.multipart.MaxUploadSizeExceededException">error</prop>
-            </props>
-        </property>
-    </bean>
+
 
 
 </beans>

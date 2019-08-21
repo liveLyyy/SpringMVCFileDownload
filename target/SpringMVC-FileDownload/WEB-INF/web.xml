@@ -7,6 +7,9 @@
          version="3.1">
     <display-name>Archetype Created Web Application</display-name>
 
+    <welcome-file-list>
+        <welcome-file>registerForm.jsp</welcome-file>
+    </welcome-file-list>
 
     <!--  前端控制器-->
     <servlet>
